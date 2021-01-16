@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: product-service-one
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instance-id: "${spring.cloud.client.hostname}:${spring.application.name}:${random.int[1,999999]}"
+
+
+---
+
+spring:
+  profiles: zone1
+  cloud:
+    consul:
+      discovery:
+        instance-zone: zone1
+
+
+---
+
+spring:
+  profiles: zone2
+  cloud:
+    consul:
+      discovery:
+        instance-zone: zone2

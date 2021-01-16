@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: product-service-one
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+  output:
+    ansi:
+      enabled: always
+
+
+  h2:
+    console:
+      enabled: true
+      uri: jdbc:h2:mem:testdbproduct
+      path: /h2-console
+      settings:
+        trace: true
+        web-allow-others: true
+        web-admin-password: admin
+  datasource:
+    url: jdbc:h2:mem:testdbproduct;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+
+
+server:
+  port: ${PORT:8083}

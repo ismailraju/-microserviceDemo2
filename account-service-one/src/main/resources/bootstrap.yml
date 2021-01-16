@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: account-service-one
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+#        instance-id: "${spring.cloud.client.hostname}:${spring.application.name}:${random.int[1,999999]}"
+        instance-id: "${spring.cloud.client.hostname}:${spring.application.name}:${random.int[1,999999]}"
+
+
+
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+
+
+server:
+  port: 8081
+
+---
+spring:
+  profiles: zone1
+  cloud:
+    consul:
+      discovery:
+        instanceZone: zone1
+
+---
+spring:
+  profiles: zone2
+  cloud:
+    consul:
+      discovery:
+        instanceZone: zone2

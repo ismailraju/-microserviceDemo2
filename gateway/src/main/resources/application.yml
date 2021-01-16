@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: gateway-service-one
+  cloud:
+    gateway:
+      httpclient:
+        wiretap: true
+      httpserver:
+        wiretap: true
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: account-service
+          uri: lb://account-service
+          predicates:
+            - Path=/account/**
+          filters:
+            - RewritePath=/account/(?<path>.*) , /$\{path}
+        - id: account-service-one
+          uri: lb://account-service-one
+          predicates:
+            - Path=/account-one/**
+          filters:
+            - RewritePath=/account-one/(?<path>.*) , /$\{path}
+        - id: customer-service-one
+          uri: lb://customer-service-one
+          predicates:
+            - Path=/customer-one/**
+          filters:
+            - RewritePath=/customer-one/(?<path>.*) , /$\{path}
+        - id: product-service-one
+          uri: lb://product-service-one
+          predicates:
+            - Path=/product-one/**
+          filters:
+            - RewritePath=/product-one/(?<path>.*), /$\{path}
+
+
+
+#logging.level.com.netflix: DEBUG
+
+logging:
+  level:
+    reactor:
+      netty: INFO
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE
+
+
+

@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: customer-service-one
+  h2:
+    console:
+      enabled: true
+      settings:
+        trace: true
+        web-allow-others: true
+        web-admin-password: admin
+      path: /h2-console
+      url: jdbc:h2:mem:testdbcustomer
+
+  output.ansi.enabled: ALWAYS
+
+  datasource:
+    url: jdbc:h2:mem:testdbcustomer;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+
+server:
+  port: 8082

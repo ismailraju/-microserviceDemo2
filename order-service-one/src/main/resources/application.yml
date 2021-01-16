@@ -1,0 +1,59 @@
+
+server:
+  port: ${PORT:8084}
+
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      url: jdbc:h2:mem:testdborder
+      settings:
+        trace: true
+        web-allow-others: true
+        web-admin-password: admin
+
+
+
+
+
+
+  datasource:
+    url: jdbc:h2:mem:testdborder;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+
+
+
+  application:
+    name: order-service-one
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+  output.ansi.enabled: ALWAYS
+
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+
+---
+spring:
+  profiles: zone1
+  cloud:
+    consul:
+      discovery:
+        instanceZone: zone1
+
+---
+spring:
+  profiles: zone2
+  cloud:
+    consul:
+      discovery:
+        instanceZone: zone2
