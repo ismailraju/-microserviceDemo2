@@ -36,8 +36,8 @@ public class AccountContoller {
     }
 
 
-    @PutMapping(value = "/withdrow/{id}/{amount}")
-    public Account withdrow(@PathVariable("id") Long id, @PathVariable("amount") int amount) throws Exception {
+    @PutMapping(value = "/withdraw/{id}/{amount}")
+    public Account withdraw(@PathVariable("id") Long id, @PathVariable("amount") int amount) throws Exception {
         Optional<Account> acnt = accountRepository.findById(id);
         if (acnt.isPresent()) {
             Account account = acnt.get();

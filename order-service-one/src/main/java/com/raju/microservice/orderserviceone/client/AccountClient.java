@@ -10,5 +10,5 @@ import org.springframework.web.bind.annotation.PutMapping;
 public interface AccountClient {
 
     @PutMapping("/withdraw/{customerId}/{amount}")
-    Account withdrow(@PathVariable("customerId") Long customerId, @PathVariable("amount") int amount);
+    Account withdraw(@PathVariable("customerId") Long customerId, @PathVariable("amount") int amount);
 }

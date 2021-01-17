@@ -81,7 +81,7 @@ public class OrderController {
 
             LOGGER.info("Order found : {}", objectMapper.writeValueAsString(order));
 
-            accountClient.withdrow(order.get().getAccountId(), order.get().getPrice());
+            accountClient.withdraw(order.get().getAccountId(), order.get().getPrice());
 
             HashMap<String, Object> log = new HashMap<>();
             log.put("accountId", order.get().getAccountId());
