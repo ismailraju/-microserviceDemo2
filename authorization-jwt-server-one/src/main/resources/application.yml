@@ -1,0 +1,73 @@
+
+spring:
+  application:
+    name: authorization-jwt-server-one
+  zipkin:
+    base-url: http://localhost:9411/
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+  output.ansi.enabled: ALWAYS
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      url: jdbc:h2:mem:testdbauthJwt
+      settings:
+        trace: true
+        web-allow-others: true
+        web-admin-password: admin
+
+
+
+
+
+
+  datasource:
+    url: jdbc:h2:mem:testdbauthJwt;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    initialization-mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+
+
+
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+
+    org:
+      hibernate:
+        type: trace
+---
+spring:
+  profiles: zone1
+  cloud:
+    consul:
+      discovery:
+        instance-zone: zone1
+
+server:
+  port: 9192
+---
+spring:
+  profiles: zone2
+  cloud:
+    consul:
+      discovery:
+        instance-zone: zone2
+server:
+  port: 9192

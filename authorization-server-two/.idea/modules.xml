@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../authorization-jwt-server-one/authorization-server-one.iml" filepath="$PROJECT_DIR$/../authorization-jwt-server-one/authorization-server-one.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../resource-service-jwt-one/resource-service-jwt-one.iml" filepath="$PROJECT_DIR$/../resource-service-jwt-one/resource-service-jwt-one.iml" />
+    </modules>
+  </component>
+</project>

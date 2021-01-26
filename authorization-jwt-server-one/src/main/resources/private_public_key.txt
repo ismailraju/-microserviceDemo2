@@ -1,0 +1,44 @@
+PS D:\PROJECTS\Other\microserviceDemo2\authorization-jwt-server-one> openssl genrsa -out jwt.pem 2048
+Generating RSA private key, 2048 bit long modulus (2 primes)
+........................+++++
+..................................+++++
+e is 65537 (0x010001)
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0UajNJlsm9whQTgUq1GG8U5LGFMGq3hwPe5r2DxaZo8gCz4Y
+X8nZg0l6ASJWokZe6iHLyWRh0MVpKK+Jgns/TQFhXnk5fF+JBmfJH2JaC9LaNl24
+ihPmRnMRZv48OdMpknY71yO5wDBxVUXIiIm3cyjPFP1OKTVAO1XlgzkDku33iF8u
+Kq47Ywcmt9Krs+m+91QFpyp8trs6GbQdGHwK6claF+hM8Sl0Hp/Ukkqce1ZLa1Pw
+uwhuha4UEAcR5gbqv1wnTcwNB7cvfeOnUDVq8t0KJbY+mgppe+UlzuzHhqb2cJR1
+M33dUbM/CjT1VAXigJJ4hrSpgPy6GCQWmdHsswIDAQABAoIBAQDDdXAVPn68C5tb
+qJ9Vay3XzsJAk7sVB8X9ceNz8NqWE3NgTLzDKmlnP4cd7A5yPbuEfdAx5vmc3eRb
+xadvIOF8cJ+adyqDyU7XlrO4BkoH5QU95cbn37IhdnN4eFeTwm9/hcJaK9nfcN9J
+P4YOUGHwwtq2xebsgfnd8VoNd4CpBruxorOFTmZYmJj4a5ZVyOE3su94i6ZNrhQW
+RlqF37HeudgX92DxcH3H65rJR/PvcGNqk0T6XO1lDT6YHIEdepuY3NsNIYLjYm1H
+4pufeDzk6jeiowZ4y1rwZeBTmMl/GyKPyBUhLUbaEK4bRrEotnjbWD/tWQC9Nxg3
+FYavd3OBAoGBAPkuRQJhvQ9K+mjmCpuBh72CyNS0IfXrS7nity8Dck9Jm+7HX5wG
+Cki9lEn+D4c0amTQfAhrM6x9387929T5UoCvC6z4YemeI9w4jjApKOmn6FTeToCA
+TtR+fAOi/b/mzIRuz70JHV2t0rYQwpIMvJfsmCMIqBW+FI5UxuIFh1aTAoGBANcA
+zLOCeGNhTatwJaKqFY6W6dUQ3YU1TAK38aSMMQXRfx8jd6pMcDwIB/VTLyiNPeEO
+GNPNosFNh9/aY4stC/iOxOoCleTKeXNdW4pMg8IfUj1CaKZSEcF1FrBBdavBhteT
+MYgBR50YRenyKGrb/HSaUErHaVuEPVvgNv8kScVhAoGBAM0j/IhDcuReM92cVWtE
+rj2kqDYEvli5B7TXIzw/OCJyVT+1P88xYdIU0TpBQQNscZLh2NsNdpMxZcoBULP7
+NqLeeVxDeEheeuNYZCbeG+KQ60LDahl8iGmEYBCWZRVRq1nz6G6WTGjNK8Xb8nNO
+rQzeKTnebJLJ1B6BSOLW7l6lAoGABDZbzFiOC0RoxScZVaqHaZfDVQ1TibyVlKgN
+7+9fNoH4P5/uREPjHwn5PfE3R1AdGj+wdNXejnL6aoRY1u03AtOpP/x0+1qMLppx
+pLADFNaQQer/KeMJvgSRQTrHF2pfPfIAUm3T/VvwYrj/2bgdphsv34cwpT5eBWLL
+MQyA9YECgYEA1Y+Y7x/Vx80DubeCh9iYL9M8SYX94jsww5gtMil94CKQxtPDJEVk
+r/Lc8kKE2MDoD7yRvk9P7z89YzqrNF5D5s+aS+Qd65AGnJomx8Ig34MdEP8/eY/+
+verjFxKjVOdo9987t9RwdYQtsTcpezICQwICkCydwXYOnVIhQK/5VOI=
+-----END RSA PRIVATE KEY-----
+PS D:\PROJECTS\Other\microserviceDemo2\authorization-jwt-server-one>
+PS D:\PROJECTS\Other\microserviceDemo2\authorization-jwt-server-one> openssl rsa -in jwt.pem -pubout
+writing RSA key
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0UajNJlsm9whQTgUq1GG
+8U5LGFMGq3hwPe5r2DxaZo8gCz4YX8nZg0l6ASJWokZe6iHLyWRh0MVpKK+Jgns/
+TQFhXnk5fF+JBmfJH2JaC9LaNl24ihPmRnMRZv48OdMpknY71yO5wDBxVUXIiIm3
+cyjPFP1OKTVAO1XlgzkDku33iF8uKq47Ywcmt9Krs+m+91QFpyp8trs6GbQdGHwK
+6claF+hM8Sl0Hp/Ukkqce1ZLa1Pwuwhuha4UEAcR5gbqv1wnTcwNB7cvfeOnUDVq
+8t0KJbY+mgppe+UlzuzHhqb2cJR1M33dUbM/CjT1VAXigJJ4hrSpgPy6GCQWmdHs
+swIDAQAB
+-----END PUBLIC KEY-----

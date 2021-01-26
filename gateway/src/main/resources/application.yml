@@ -31,6 +31,11 @@ spring:
             - Path=/customer-one/**
           filters:
             - RewritePath=/customer-one/(?<path>.*) , /$\{path}
+            - name: Logging
+              args:
+                baseMessage: My Custom Message
+                preLogger: true
+                postLogger: false
         - id: product-service-one
           uri: lb://product-service-one
           predicates:
